@@ -162,7 +162,7 @@
         .btn-no { background-color: white; color: #666; position: relative; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
         .note {
-            position: absolute; bottom: 10px; left: 5%; width: 90%; height: 180px; background: white;
+            position: absolute; bottom: 10px; left: 5%; width: 90%; height: auto; background: white;
             border-radius: 10px; padding: 20px; box-sizing: border-box; text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 15; transform: scale(0.9); opacity: 0; 
             transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -218,9 +218,18 @@
             <div class="flap" id="flap"></div>
             <div class="note" id="note">
                 <div class="close-btn" onclick="closeEnvelope()">×</div>
-                <h1>Fact: Correct! ✅</h1>
-                <p>Teddy knew it all along.</p>
-                <p style="font-size: 0.8rem; color: #bbb;">(Happy Teddy Day!)</p>
+                
+                <h1 style="font-size: 1.5rem; margin-bottom: 10px;">You're Correct,<br>Nayanika! ✅</h1>
+                
+                <p>Sid and I knew it all along.</p>
+                
+                <p style="font-size: 0.9rem; color: #bbb; line-height: 1.5; text-align: left;">
+                    Happy Teddy Day!<br>
+                    I have enjoyed talking with you these last few weeks :)<br>
+                    Looking forward to where this path leads ✨<br>
+                    -Sid
+                </p>
+                
                 <span class="emoji-big">🧸👑</span>
             </div>
             <div class="pocket"></div>
