@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teddy has a secret...</title>
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+	
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
     
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -165,11 +165,11 @@
 
         .note {
             position: absolute; bottom: 10px; left: 5%; width: 90%; height: auto; background: white;
-            border-radius: 10px; padding: 20px; box-sizing: border-box; text-align: center;
+            border-radius: 10px; padding: 40px 20px 20px 20px; /* Top, Right, Bottom, Left */ box-sizing: border-box; text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 15; transform: scale(0.9); opacity: 0; 
             transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        .note.pop-out { bottom: 140px; transform: scale(1.2); opacity: 1; box-shadow: 0 20px 50px rgba(0,0,0,0.2); z-index: 100; }
+        .note.pop-out { bottom: 110px; transform: scale(1.2); opacity: 1; box-shadow: 0 20px 50px rgba(0,0,0,0.2); z-index: 100; }
         .note h1 { color: var(--primary); font-family: 'Fredoka One', cursive; margin: 0; font-size: 1.8rem; }
         .note p { color: #666; font-size: 1rem; margin-top: 10px; }
         .emoji-big { font-size: 3rem; margin-top: 10px; display: block; }
@@ -187,10 +187,33 @@
         .paw.right { right: -10px; transform: rotate(20deg); }
         
         @media (max-width: 500px) {
-            .wrapper { width: 340px; margin-top: 100px;}
+            .wrapper { width: 340px; margin-top: 100px; }
             .btn { padding: 10px 16px; font-size: 0.9rem; }
-            /* Adjusted for mobile */
-            .speech-bubble { right: -20px; font-size: 0.9rem; padding: 12px 20px; top: -80px;}
+            
+            /* --- FIXED SPEECH BUBBLE --- */
+            .speech-bubble { 
+                /* Center the bubble above the bear */
+                left: 50%;
+                right: auto; 
+                top: -95px;
+                transform: translateX(-50%); /* This perfectly centers it */
+                
+                /* Styling adjustments */
+                font-size: 0.8rem; 
+                padding: 10px 15px;
+                white-space: nowrap; /* Keep on one line if possible */
+                width: auto;
+            }
+
+            /* Move the tail to the center bottom of the bubble */
+            .speech-tail {
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 10px solid #fff;
+            }
         }
     </style>
 </head>
@@ -223,7 +246,7 @@
                 
                 <h1 style="font-size: 1.5rem; margin-bottom: 10px;">You're Correct,<br>Nayanika! ✅</h1>
                 
-                <p>Sid and I knew it all along. He has soemthing to say..</p>
+                <p>Sid and I knew it all along. He has something to say..</p>
                 
                 <p style="font-size: 0.9rem; color: #bbb; line-height: 1.5; text-align: left;">
                     Happy Teddy Day!<br>
@@ -312,5 +335,3 @@
     </script>
 </body>
 </html>
-
-
